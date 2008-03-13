@@ -1,7 +1,7 @@
 Summary:	Vim syntax: RPM specfiles
 Name:		vim-syntax-spec
-Version:	1.70
-Release:	2
+Version:	1.78
+Release:	1
 License:	Charityware
 Group:		Applications/Editors/Vim
 Source0:	spec.vim
@@ -18,6 +18,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This plugin provides syntax highlighting for RPM spec files.
 
 %prep
+%setup -qcT
+rev=$(awk '/^".*Version:.*Revision:/{print $4}' %{SOURCE0})
+if [ "$rev" != "%{version}" ]; then
+	: Update version $rev, and retry
+	exit 1
+fi
 
 %install
 rm -rf $RPM_BUILD_ROOT
