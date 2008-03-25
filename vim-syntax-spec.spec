@@ -1,7 +1,7 @@
 Summary:	Vim syntax: RPM specfiles
 Name:		vim-syntax-spec
 Version:	1.79
-Release:	2
+Release:	3
 License:	Charityware
 Group:		Applications/Editors/Vim
 Source0:	spec.vim
