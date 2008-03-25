@@ -1,13 +1,14 @@
 Summary:	Vim syntax: RPM specfiles
 Name:		vim-syntax-spec
 Version:	1.79
-Release:	1
+Release:	2
 License:	Charityware
 Group:		Applications/Editors/Vim
 Source0:	spec.vim
 Source1:	vim-ftplugin-spec.vim
 # for _vimdatadir existence
 Requires:	vim >= 4:6.3.058-3
+Obsoletes:	vim-ftplugin-spec
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
