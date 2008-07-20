@@ -1,4 +1,5 @@
 Summary:	Vim syntax: RPM specfiles
+Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
 Version:	1.82
 Release:	1
@@ -17,6 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This plugin provides syntax highlighting for RPM spec files.
+
+%description -l pl.UTF-8
+Ta wtyczka zapewnia podświetlanie składni plików RPM spec.
 
 %prep
 %setup -qcT
