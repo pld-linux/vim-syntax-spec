@@ -1,7 +1,7 @@
 Summary:	Vim syntax: RPM specfiles
 Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
-Version:	1.82
+Version:	1.84
 Release:	1
 License:	Charityware
 Group:		Applications/Editors/Vim
