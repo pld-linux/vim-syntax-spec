@@ -123,7 +123,7 @@ syn keyword specMacroNameLocal contained __cxx __cc __ar __libtoolize __autopoin
 syn keyword specMacroNameLocal contained __gettextize __glib_gettextize __intltoolize
 syn keyword specMacroNameLocal contained __bzip2 __cat __chgrp __chmod __chown __cp   __cpio __file __gpg __grep __gzip
 syn keyword specMacroNameLocal contained __id  __install __ld   __make   __mkdir __mkdir_p __mv __nm  __objcopy __objdump
-syn keyword specMacroNameLocal contained __patch __perl __pgp __python __rm __rsh  __sed __ssh __strip  __tar __unzip
+syn keyword specMacroNameLocal contained __patch __perl __pgp __python __rm __rsh  __sed __ssh __strip  __tar __unzip __lzma
 
 
 
