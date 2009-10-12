@@ -102,6 +102,7 @@ syn keyword specMacroNameOther contained requires_zend_extension ruby_mod_ver_re
 syn keyword specMacroNameOther contained ruby_archdir ruby_rubylibdir ruby_vendorarchdir ruby_vendorlibdir ruby_ridir ruby_sitearchdir ruby_sitelibdir ruby_version ruby_rdocdir
 syn keyword specMacroNameOther contained apache_modules_api php_sysconfdir php_includedir php_extensiondir _browserpluginsdir _browserpluginsconfdir
 syn keyword specMacroNameOther contained releq_kernel releq_kernel_up releq_kernel_smp requires_releq_kernel requires_releq_kernel_up requires_releq_kernel_smp
+syn keyword specMacroNameOther contained pyrequires_eq
 
 syn match   specMacroNameOther contained '\<\(PATCH\|SOURCE\)\d*\>'
 
