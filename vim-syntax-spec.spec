@@ -1,19 +1,19 @@
 Summary:	Vim syntax: RPM specfiles
 Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
-Version:	1.98
+Version:	1.101
 Release:	1
 License:	Charityware
 Group:		Applications/Editors/Vim
 Source0:	spec.vim
 Source1:	vim-ftplugin-spec.vim
 # for _vimdatadir existence
-Requires:	vim-rt >= 4:6.3.058-3
+Requires:	vim-rt >= 4:7.2.170
 Obsoletes:	vim-ftplugin-spec
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_vimdatadir	%{_datadir}/vim/vimfiles
+%define		_vimdatadir	%{_datadir}/vim
 %define		syntax spec
 
 %description
