@@ -168,6 +168,8 @@ syn match specFilesOpts       contained    '\s-f\s*\w'ms=s+1,me=e-1
 syn match specDescriptionCharset         contained '-l\s[a-z_A-Z]\+\(\.UTF-8\)\?'ms=s+2
 syn match specPreAmbleCharset         contained '([a-z_A-Z]\+\(\.UTF-8\)\?):'
 
+" limit description width to 70 columns
+syn match specDescriptionLimit '\%>70v.\+'
 
 " %% PreAmble Section %%
 " Copyright and Serial were deprecated by License and Epoch
@@ -185,7 +187,7 @@ syn region specPreAmble oneline matchgroup=specPreambleField
 
 " %% Description Section %%
 syn region specDescriptionArea matchgroup=specSection start='^%description' end='^%'me=e-1
-	\ contains=specDescriptionOpts,specEmail,specURL,specNumber,specMacroIdentifier,specComment
+	\ contains=specDescriptionOpts,specEmail,specURL,specNumber,specMacroIdentifier,specComment,specDescriptionLimit
 
 " %% Package Section %%
 syn region specPackageArea matchgroup=specSection start='^%package' end='^%'me=e-1
@@ -296,6 +298,7 @@ if version >= 508 || !exists("did_spec_syntax_inits")
   HiLink specDate			String
   HiLink specPreAmbleCharset		String
   HiLink specDescriptionCharset		String
+  HiLink specDescriptionLimit		Error
   HiLink specDescriptionOpts		specOpts
   HiLink specEmail			specWWWlink
   HiLink specError			Error
