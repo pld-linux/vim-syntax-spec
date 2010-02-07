@@ -1,7 +1,7 @@
 Summary:	Vim syntax: RPM specfiles
 Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
-Version:	1.102
+Version:	1.103
 Release:	1
 License:	Charityware
 Group:		Applications/Editors/Vim
@@ -14,7 +14,6 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_vimdatadir	%{_datadir}/vim
-%define		syntax spec
 
 %description
 This plugin provides syntax highlighting for RPM spec files.
