@@ -29,11 +29,18 @@ syn match specVariables   contained '\${\w*}' contains=specSpecialVariablesNames
 syn match specVariables   contained '\${\w*[#%][^}]*}' contains=specSubstChar
 
 syn match specMacroIdentifier contained '%\h\w*' contains=specMacroNameLocal,specMacroNameOther,specPercent,specSpecialChar
-syn region specMacroIdentifier oneline matchgroup=Special start='%{' skip='\\}' end='}' contains=specMacroNameLocal,specMacroNameOther,specPercent,specSpecialChar
+syn region specMacroIdentifier oneline matchgroup=Special start='%{' skip='\\}' end='}' contains=specConfOpts,specMacroNameLocal,specMacroNameOther,specPercent,specSpecialChar
 syn match specBcond contained '%{with\(out\)\?\s\+[a-zA-Z0-9_-]\+}'
 
+syn match specConfOpts contained '{\@<=__with\(_without\)\?' nextgroup=specConfOptsBcond
+syn match specConfOpts contained '{\@<=__without' nextgroup=specConfOptsBcond
+syn match specConfOpts contained '{\@<=__enable\(_disable\)\?' nextgroup=specConfOptsBcond
+syn match specConfOpts contained '{\@<=__disable' nextgroup=specConfOptsBcond
+syn match specConfOptsBcond '\s\+[a-zA-Z0-9_]\+' nextgroup=specConfOptsName
+syn match specConfOptsName '\s\+[a-zA-Z0-9_-]\+'
+
 syn match specSpecialVariables contained '\$[0-9]\|\${[0-9]}'
-syn match specCommandOpts      contained '\s\(-\w\+\|--\w[a-zA-Z0-9_-]\+\)'ms=s+1
+syn match specCommandOpts      contained '\(\s\|:\)\@<=\(-\w\+\|--\w[a-zA-Z0-9_-]\+\)'
 syn match specComment '^\s*#.*$'
 
 " matches with no highlight
@@ -276,6 +283,9 @@ if version >= 508 || !exists("did_spec_syntax_inits")
   " spec colors
   HiLink specBlock			Function
   HiLink specBcond			Function
+  HiLink specConfOpts			specOpts
+  HiLink specConfOptsBcond		Function
+  HiLink specConfOptsName		specOpts
   HiLink specColon			Special
   HiLink specCommand			Statement
   HiLink specPreambleField		Statement
