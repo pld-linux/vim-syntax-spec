@@ -19,6 +19,8 @@ syn case match
 
 syn sync minlines=1000
 
+syn cluster specLimitedVisibility contains=specConfOpts,specConfOptsBcond,specConfOptsName,specDescriptionLimit
+
 syn match specSpecialChar contained '[][!$()\\|>^;:]'
 syn match specColon       contained ':'
 syn match specPercent     contained '%'
@@ -36,8 +38,8 @@ syn match specConfOpts contained '{\@<=__with\(_without\)\?' nextgroup=specConfO
 syn match specConfOpts contained '{\@<=__without' nextgroup=specConfOptsBcond
 syn match specConfOpts contained '{\@<=__enable\(_disable\)\?' nextgroup=specConfOptsBcond
 syn match specConfOpts contained '{\@<=__disable' nextgroup=specConfOptsBcond
-syn match specConfOptsBcond '\s\+[a-zA-Z0-9_]\+' nextgroup=specConfOptsName
-syn match specConfOptsName '\s\+[a-zA-Z0-9_-]\+'
+syn match specConfOptsBcond contained '\s\+[a-zA-Z0-9_]\+' nextgroup=specConfOptsName
+syn match specConfOptsName contained '\s\+[a-zA-Z0-9_-]\+'
 
 syn match specSpecialVariables contained '\$[0-9]\|\${[0-9]}'
 syn match specCommandOpts      contained '\(\s\|:\)\@<=\(-\w\+\|--\w[a-zA-Z0-9_-]\+\)'
@@ -144,7 +146,7 @@ syn keyword specMacroNameLocal contained __patch __perl __pgp __python __rm __rs
 " tip: remember do include new items on specScriptArea's skip section
 syn region specSectionMacroArea oneline matchgroup=specSectionMacro start='^%\(\(un\)\?define\|dump\|trace\|patch\d*\|setup\|configure2_13\|configure\|GNUconfigure\|find_lang\|makeinstall\|cmake\|scons\|waf\|bcond_with\(out\)\?\|include\)\>' end='$' contains=specCommandOpts,specMacroIdentifier,specSectionMacroBcondArea
 syn region specSectionMacroBracketArea oneline matchgroup=specSectionMacro start='^%{\(configure2_13\|configure\|GNUconfigure\|find_lang\|makeinstall\|cmake\|scons\|waf\)}' end='$' contains=specCommandOpts,specMacroIdentifier
-syn region specSectionMacroBcondArea oneline matchgroup=specBlock start='%{!\??\(with\(out\)\?_[a-zA-Z0-9_]\+\|debug\):' skip='\\}' end='}' contains=ALL
+syn region specSectionMacroBcondArea oneline matchgroup=specBlock start='%{!\??\(with\(out\)\?_[a-zA-Z0-9_]\+\|debug\):' skip='\\}' end='}' contains=ALLBUT,@specLimitedVisibility
 
 " %% Files Section %%
 " TODO %config valid parameters: missingok\|noreplace
@@ -170,7 +172,7 @@ syn match specDescriptionCharset         contained '-l\s[a-z_A-Z]\+\(\.UTF-8\)\?
 syn match specPreAmbleCharset         contained '([a-z_A-Z]\+\(\.UTF-8\)\?):'
 
 " limit description width to 70 columns
-syn match specDescriptionLimit '\%>70v.\+'
+syn match specDescriptionLimit contained '\%>70v.\+'
 
 " %% PreAmble Section %%
 " Copyright and Serial were deprecated by License and Epoch
@@ -220,14 +222,13 @@ syn region shQuote1 contained matchgroup=shQuoteDelim start=+'+ skip=+\\'+ end=+
 syn region shQuote2 contained matchgroup=shQuoteDelim start=+"+ skip=+\\"+ end=+"+ contains=specVariables,specMacroIdentifier,specSectionMacroBcondArea
 
 syn match shOperator contained '[><|!&;]\|[!=]='
-syn region shDo transparent matchgroup=specBlock start="\(^\|\s\)do\(\s\|$\)" end="\(^\|\s\)done\(\s\|$\)" contains=ALLBUT,shDoError,shCase,specPreAmble,@specListedFiles
-syn region shIf transparent matchgroup=specBlock start="\(^\|\s\)if\(\s\|$\)" end="\(^\|\s\)fi\(\s\|$\)" contains=ALLBUT,shIfError,shCase,@specListedFiles
+syn region shDo transparent matchgroup=specBlock start="\(^\|\s\)do\(\s\|$\)" end="\(^\|\s\)done\(\s\|$\)" contains=ALLBUT,shDoError,shCase,specPreAmble,@specListedFiles,@specLimitedVisibility
+syn region shIf transparent matchgroup=specBlock start="\(^\|\s\)if\(\s\|$\)" end="\(^\|\s\)fi\(\s\|$\)" contains=ALLBUT,shIfError,shCase,@specListedFiles,@specLimitedVisibility
+syn region shFor  matchgroup=specBlock start="\(^\|\s\)for\(\s\|$\)" end="\(^\|\s\)in\(\s\|$\)" contains=ALLBUT,shInError,shCase,@specListedFiles,@specLimitedVisibility
 
-syn region shFor  matchgroup=specBlock start="\(^\|\s\)for\(\s\|$\)" end="\(^\|\s\)in\(\s\|$\)" contains=ALLBUT,shInError,shCase,@specListedFiles
-
-syn region shCaseEsac transparent matchgroup=specBlock start="\(^\|\s\)case\(\s\|$\)" matchgroup=NONE end="\(^\|\s\)in\(\s\|$\)"me=s-1 contains=ALLBUT,@specListedFiles nextgroup=shCaseEsac
-syn region shCaseEsac matchgroup=specBlock start="\(^\|\s\)in\(\s\|$\)" end="\(^\|\s\)esac\(\s\|$\)" contains=ALLBUT,@specListedFilesBin
-syn region shCase matchgroup=specBlock contained start=")"  end=";;" contains=ALLBUT,shCase,@specListedFiles
+syn region shCaseEsac transparent matchgroup=specBlock start="\(^\|\s\)case\(\s\|$\)" matchgroup=NONE end="\(^\|\s\)in\(\s\|$\)"me=s-1 contains=ALLBUT,@specListedFiles,@specLimitedVisibility nextgroup=shCaseEsac
+syn region shCaseEsac matchgroup=specBlock start="\(^\|\s\)in\(\s\|$\)" end="\(^\|\s\)esac\(\s\|$\)" contains=ALLBUT,@specListedFilesBin,@specLimitedVisibility
+syn region shCase matchgroup=specBlock contained start=")"  end=";;" contains=ALLBUT,shCase,@specListedFiles,@specLimitedVisibility
 
 syn sync match shDoSync       grouphere  shDo       "\<do\>"
 syn sync match shDoSync       groupthere shDo       "\<done\>"
@@ -238,7 +239,7 @@ syn sync match shForSync      groupthere shFor      "\<in\>"
 syn sync match shCaseEsacSync grouphere  shCaseEsac "\<case\>"
 syn sync match shCaseEsacSync groupthere shCaseEsac "\<esac\>"
 
-syn region specIf  matchgroup=specBlock start="%ifosf\|%ifos\|%ifnos\|%ifarch\|%ifnarch\|ifdef\|ifndef\|%if\|%else"  end='%endif' contains=ALLBUT, specOutSkip, specOut2
+syn region specIf  matchgroup=specBlock start="%ifosf\|%ifos\|%ifnos\|%ifarch\|%ifnarch\|ifdef\|ifndef\|%if\|%else"  end='%endif' contains=ALLBUT,specOutSkip,specOut2,@specLimitedVisibility
 
 " %if 0 handing
 if exists("spec_if0")
