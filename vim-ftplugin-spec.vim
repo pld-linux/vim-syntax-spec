@@ -15,4 +15,4 @@ map <F9> :!. /etc/shrc.d/rpm-build.sh; cvs diff -u % \| diffcol \| less -nR<CR>
 map <F10> :!builder -bb -R -u %<CR>
 
 " PLD specfiles are in UTF-8 encoding
-setlocal fileencodings=utf-8
+setlocal fileencodings=ucs-bom,utf-8,default,latin2
