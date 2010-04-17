@@ -61,8 +61,8 @@ syn keyword specMonth   contained January February March April May June July Aug
 " #, @, www
 syn match specNumber '\(^-\=\|[ \t]-\=\|-\)[0-9.-]*[0-9]'
 syn match specEmail contained "<\=\<[A-Za-z0-9_.-]\+@\([A-Za-z0-9_-]\+\.\)\+[A-Za-z]\+\>>\="
-syn match specURL      contained '\<\(\(https\{0,1}\|ftp\)://\|\(www[23]\{0,1}\.\|ftp\.\)\)[A-Za-z0-9._/~:,#?=-]\+\>'
-syn match specURLMacro contained '\<\(\(https\{0,1}\|ftp\)://\|\(www[23]\{0,1}\.\|ftp\.\)\)[A-Za-z0-9._/~:,#%{}-]\+\>' contains=specMacroIdentifier
+syn match specURL      contained '\<\(\(https\{0,1}\|ftp\)://\|\(www[23]\{0,1}\.\|ftp\.\)\)[A-Za-z0-9._/~:,#+?=-]\+\>'
+syn match specURLMacro contained '\<\(\(https\{0,1}\|ftp\)://\|\(www[23]\{0,1}\.\|ftp\.\)\)[A-Za-z0-9._/~:,#+%{}-]\+\>' contains=specMacroIdentifier
 
 " TODO take specSpecialVariables out of the cluster for the sh* contains (ALLBUT)
 " Special system directories
