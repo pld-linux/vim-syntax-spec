@@ -109,7 +109,7 @@ syn keyword specMacroNameOther contained buildroot buildsubdir distribution dist
 syn keyword specMacroNameOther contained __kernel_ver date debugcflags debuginfocflags epoch kgcc kgcc_package packager
 syn keyword specMacroNameOther contained pear_package_install pear_package_setup perl_archlib perl_privlib perl_sitelib
 syn keyword specMacroNameOther contained perl_vendorarch perl_vendorlib php_pear_dir php_data_dir py_sitedir py_scriptdir py_sitescriptdir
-syn keyword specMacroNameOther contained requires_php_extension requires_php_pdo_module
+syn keyword specMacroNameOther contained required_jdk requires_php_extension requires_php_pdo_module
 syn keyword specMacroNameOther contained requires_zend_extension ruby_mod_ver_requires_eq ruby_ver_requires_eq rpmcflags rpmcppflags rpmcxxflags rpmldflags tmpdir
 syn keyword specMacroNameOther contained ruby_archdir ruby_rubylibdir ruby_vendorarchdir ruby_vendorlibdir ruby_ridir ruby_sitearchdir ruby_sitelibdir ruby_version ruby_rdocdir
 syn keyword specMacroNameOther contained apache_modules_api php_sysconfdir php_includedir php_extensiondir _browserpluginsdir _browserpluginsconfdir
@@ -131,7 +131,7 @@ syn keyword specMacroNameLocal contained _netsharedpath _oldincludedir _omf_dest
 syn keyword specMacroNameLocal contained _pgp_path _pixmapsdir _pkgconfigdir _prefix _preScriptEnvironment _provides _rpmdir
 syn keyword specMacroNameLocal contained _rpmfilename _sbindir _sharedstatedir _signature _smp_mflags _sourcedir _source_payload
 syn keyword specMacroNameLocal contained _specdir _srcrpmdir _sysconfdir _target _target_alias _target_cpu _target_os _target_platform
-syn keyword specMacroNameLocal contained _target_vendor _target_base_arch _timecheck _tmppath _topdir _usr _usrsrc _var _vendor
+syn keyword specMacroNameLocal contained _target_vendor _target_base_arch _timecheck _tmppath _topdir _use_jdk  _usr _usrsrc _var _vendor
 syn keyword specMacroNameLocal contained __cxx __cc __ar __libtoolize __autopoint __aclocal __autoconf __automake __autoheader
 syn keyword specMacroNameLocal contained __gettextize __glib_gettextize __gtkdocize __intltoolize
 syn keyword specMacroNameLocal contained __bzip2 __cat __chgrp __chmod __chown __cp   __cpio __file __gpg __grep __gzip
