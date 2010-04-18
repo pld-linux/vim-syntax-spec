@@ -105,7 +105,7 @@ syn keyword specSpecialVariablesNames contained RPM_BUILD_ROOT RPM_BUILD_DIR RPM
 
 " valid macro names from /usr/lib/rpm/macros*
 syn keyword specMacroNameOther contained ix86 x8664 ppc
-syn keyword specMacroNameOther contained bootstrap_release buildroot buildsubdir distribution disturl name nil optflags perl_sitearch release requires_eq vendor version
+syn keyword specMacroNameOther contained bootstrap_release buildrequires_jdk buildroot buildsubdir distribution disturl name nil optflags perl_sitearch release requires_eq vendor version
 syn keyword specMacroNameOther contained __kernel_ver date debugcflags debuginfocflags epoch kgcc kgcc_package packager
 syn keyword specMacroNameOther contained pear_package_install pear_package_setup perl_archlib perl_privlib perl_sitelib
 syn keyword specMacroNameOther contained perl_vendorarch perl_vendorlib php_pear_dir php_data_dir py_sitedir py_scriptdir py_sitescriptdir
@@ -131,7 +131,7 @@ syn keyword specMacroNameLocal contained _netsharedpath _oldincludedir _omf_dest
 syn keyword specMacroNameLocal contained _pgp_path _pixmapsdir _pkgconfigdir _prefix _preScriptEnvironment _provides _rpmdir
 syn keyword specMacroNameLocal contained _rpmfilename _sbindir _sharedstatedir _signature _smp_mflags _sourcedir _source_payload
 syn keyword specMacroNameLocal contained _specdir _srcrpmdir _sysconfdir _target _target_alias _target_cpu _target_os _target_platform
-syn keyword specMacroNameLocal contained _target_vendor _target_base_arch _timecheck _tmppath _topdir _use_jdk  _usr _usrsrc _var _vendor
+syn keyword specMacroNameLocal contained _target_vendor _target_base_arch _timecheck _tmppath _topdir _usr _usrsrc _var _vendor
 syn keyword specMacroNameLocal contained __cxx __cc __ar __libtoolize __autopoint __aclocal __autoconf __automake __autoheader
 syn keyword specMacroNameLocal contained __gettextize __glib_gettextize __gtkdocize __intltoolize
 syn keyword specMacroNameLocal contained __bzip2 __cat __chgrp __chmod __chown __cp   __cpio __file __gpg __grep __gzip
