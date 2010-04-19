@@ -43,10 +43,12 @@ syn match specConfOptsName contained '\s\+[a-zA-Z0-9_-]\+'
 
 syn match specSpecialVariables contained '\$[0-9]\|\${[0-9]}'
 syn match specCommandOpts      contained '\(\s\|:\)\@<=\(-\w\+\|--\w[a-zA-Z0-9_-]\+\)'
-syn match specComment '^\s*#.*$' contains=specTodo
+syn match specComment '^\s*#.*$' contains=@specCommentGroup
 
 " specTodo: contains common special-notices for comments
+" Use the specCommentGroup cluster to add your own in vimrc
 syn keyword specTodo contained	FIXME TODO XXX
+syn cluster specCommentGroup	contains=specTodo,@Spell
 
 " matches with no highlight
 syn match specNoNumberHilite 'X11\|X11R6\|[a-zA-Z]*\.\d\|[a-zA-Z][-/]\d'
@@ -223,7 +225,7 @@ syn match specLogError contained "%%"
 " here's the shell syntax for all the Script Sections
 
 " sh-like comment style, only valid in script part
-syn match shComment contained '#.*$'
+syn match shComment contained '#.*$' contains=@specCommentGroup
 
 syn region shQuote1 contained matchgroup=shQuoteDelim start=+'+ skip=+\\'+ end=+'+ contains=specMacroIdentifier
 syn region shQuote2 contained matchgroup=shQuoteDelim start=+"+ skip=+\\"+ end=+"+ contains=specVariables,specMacroIdentifier,specSectionMacroBcondArea
