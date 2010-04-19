@@ -43,7 +43,10 @@ syn match specConfOptsName contained '\s\+[a-zA-Z0-9_-]\+'
 
 syn match specSpecialVariables contained '\$[0-9]\|\${[0-9]}'
 syn match specCommandOpts      contained '\(\s\|:\)\@<=\(-\w\+\|--\w[a-zA-Z0-9_-]\+\)'
-syn match specComment '^\s*#.*$'
+syn match specComment '^\s*#.*$' contains=specTodo
+
+" specTodo: contains common special-notices for comments
+syn keyword specTodo contained	FIXME TODO XXX
 
 " matches with no highlight
 syn match specNoNumberHilite 'X11\|X11R6\|[a-zA-Z]*\.\d\|[a-zA-Z][-/]\d'
@@ -326,6 +329,7 @@ if version >= 508 || !exists("did_spec_syntax_inits")
   HiLink specSpecialVariables		specGlobalMacro
   HiLink specSpecialVariablesNames	specGlobalMacro
   HiLink specTarCommand			specCommand
+  HiLink specTodo			Todo
   HiLink specMacro			Macro
   HiLink specURL			specWWWlink
   HiLink specURLMacro			specWWWlink
