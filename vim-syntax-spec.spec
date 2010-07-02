@@ -2,7 +2,7 @@ Summary:	Vim syntax: RPM specfiles
 Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
 Version:	1.114
-Release:	2
+Release:	3
 License:	Charityware
 Group:		Applications/Editors/Vim
 Source0:	spec.vim
