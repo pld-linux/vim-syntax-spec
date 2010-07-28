@@ -10,8 +10,8 @@ Source1:	vim-ftplugin-spec.vim
 # 4.4.35 is broken
 Conflicts:	rpm-build-tools < 4.4.36-2
 # for diffcol
-Suggests:	rpm-build-macros
-Conflicts:	rpm-build-macros < 1.322
+Suggests:	rpmbuild(macros)
+Conflicts:	rpmbuild(macros) < 1.322
 # for _vimdatadir existence
 Requires:	vim-rt >= 4:7.2.170
 Obsoletes:	vim-ftplugin-spec
