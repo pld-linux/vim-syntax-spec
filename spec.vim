@@ -97,6 +97,7 @@ syn match   specMacro contained '%update_browser_plugins\|%browser_plugins_add_b
 syn match   specMacro contained '%gconf_schema_\(un\)?install'
 syn match   specMacro contained '%scrollkeeper_update_post\(un\)?'
 syn match   specMacro contained '%update_icon_cache\|%update_mime_database'
+syn match   specMacro contained '%update_desktop_database_post\|%update_desktop_database_postun'
 syn match   specMacro contained '%undos'
 syn match   specMacro contained '%nagios_nrpe'
 syn match   specMacro contained '%cacti_import_template'
