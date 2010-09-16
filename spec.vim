@@ -134,7 +134,7 @@ syn keyword specMacroNameLocal contained _httpport _httpproxy _iconsdir _include
 syn keyword specMacroNameLocal contained _install_script_path _instchangelog _javaclasspath _javadir _javadocdir _javasrcdir _kernelsrcdir
 syn keyword specMacroNameLocal contained _kernel_ver _kernel_ver_str _kernel_vermagic _langpatt _lib _libdir _libexecdir _localstatedir _mandir
 syn keyword specMacroNameLocal contained _netsharedpath _oldincludedir _omf_dest_dir _os _package_version _pgpbin _pgp_name
-syn keyword specMacroNameLocal contained _pgp_path _pixmapsdir _pkgconfigdir _prefix _preScriptEnvironment _provides _rpmdir
+syn keyword specMacroNameLocal contained _pgp_path _pixmapsdir _pkgconfigdir _npkgconfigdir _prefix _preScriptEnvironment _provides _rpmdir
 syn keyword specMacroNameLocal contained _rpmfilename _sbindir _sharedstatedir _signature _smp_mflags _sourcedir _source_payload
 syn keyword specMacroNameLocal contained _specdir _srcrpmdir _sysconfdir _target _target_alias _target_cpu _target_os _target_platform
 syn keyword specMacroNameLocal contained _target_vendor _target_base_arch _timecheck _tmppath _topdir _usr _usrsrc _var _vendor
