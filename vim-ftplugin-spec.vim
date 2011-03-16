@@ -79,6 +79,14 @@ function! CreateSubpackage(n)
 	execute "normal O" . subpackstr
 endfunction
 
+" Search a subpackage
+function! SearchSubpackage()
+	let searched = QuerySubpackage()
+	call search("%package .*" . searched)
+endfunction
+
+nmap <buffer>\r :call execute "normal ORequires:\t"
+nmap <buffer>\br :call execute "normal OBuildRequires:\t"
 nmap <buffer>\se :call Summary("")<CR>
 nmap <buffer>\sh :call Summary("hu")<CR>
 nmap <buffer>\sp :call Summary("pl")<CR>
@@ -89,6 +97,11 @@ nmap <buffer>\dp :call Description("pl",QuerySubpackage(),0)<CR>
 
 nmap <buffer>\ps :call CreateSubpackage(0)<CR>
 nmap <buffer>\pn :call CreateSubpackage(1)<CR>
+
+" Jumpings
+nmap <buffer>\jc /%changelog<CR>
+nmap <buffer>\jv /Version:<CR>
+nmap <buffer>\jp :call SearchSubpackage()<CR>
 
 " PLD specfiles are in UTF-8 encoding
 setlocal fileencodings=ucs-bom,utf-8,default,latin2
