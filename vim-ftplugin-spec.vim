@@ -100,7 +100,7 @@ nmap <buffer>\pn :call CreateSubpackage(1)<CR>
 
 " Jumpings
 nmap <buffer>\jc /%changelog<CR>
-nmap <buffer>\jv /Version:<CR>
+nmap <buffer>\jv /^Version:<CR>9l
 nmap <buffer>\jp :call SearchSubpackage()<CR>
 
 " PLD specfiles are in UTF-8 encoding
