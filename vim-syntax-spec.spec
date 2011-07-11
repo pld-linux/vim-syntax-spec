@@ -1,8 +1,8 @@
 Summary:	Vim syntax: RPM specfiles
 Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
-Version:	1.117
-Release:	3
+Version:	1.118
+Release:	1
 License:	Charityware
 Group:		Applications/Editors/Vim
 Source0:	spec.vim
@@ -37,8 +37,8 @@ fi
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_vimdatadir}/{syntax,ftplugin}
-cp -a %{SOURCE0} $RPM_BUILD_ROOT%{_vimdatadir}/syntax/spec.vim
-cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_vimdatadir}/ftplugin/spec.vim
+cp -p %{SOURCE0} $RPM_BUILD_ROOT%{_vimdatadir}/syntax/spec.vim
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_vimdatadir}/ftplugin/spec.vim
 
 %clean
 rm -rf $RPM_BUILD_ROOT
