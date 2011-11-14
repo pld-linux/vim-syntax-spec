@@ -110,7 +110,7 @@ syn cluster specCommands contains=specCommand,specTarCommand,specConfigure,specC
 syn keyword specSpecialVariablesNames contained RPM_BUILD_ROOT RPM_BUILD_DIR RPM_SOURCE_DIR RPM_OPT_FLAGS LDFLAGS CC CC_FLAGS CPPNAME CFLAGS CXX CXXFLAGS CPPFLAGS
 
 " valid macro names from /usr/lib/rpm/macros*
-syn keyword specMacroNameOther contained ix86 x8664 ppc
+syn keyword specMacroNameOther contained ix86 x8664 ppc arm
 syn keyword specMacroNameOther contained bootstrap_release buildrequires_jdk buildroot buildsubdir distribution disturl name nil optflags perl_sitearch release requires_eq vendor version
 syn keyword specMacroNameOther contained __kernel_ver date debugcflags debuginfocflags epoch kgcc kgcc_package packager
 syn keyword specMacroNameOther contained pear_package_install pear_package_setup perl_archlib perl_privlib perl_sitelib
