@@ -121,6 +121,7 @@ syn keyword specMacroNameOther contained ruby_archdir ruby_rubylibdir ruby_vendo
 syn keyword specMacroNameOther contained apache_modules_api php_sysconfdir php_includedir php_extensiondir _browserpluginsdir _browserpluginsconfdir
 syn keyword specMacroNameOther contained releq_kernel releq_kernel_up releq_kernel_smp requires_releq_kernel requires_releq_kernel_up requires_releq_kernel_smp
 syn keyword specMacroNameOther contained pyrequires_eq
+syn keyword specMacroNameOther contained nodejs_libdir
 
 syn match   specMacroNameOther contained '\<\(PATCH\|SOURCE\)\d*\>'
 
@@ -145,7 +146,7 @@ syn keyword specMacroNameLocal contained __id  __install __ld   __make   __mkdir
 syn keyword specMacroNameLocal contained __patch __perl __pgp __python __rm __rsh  __sed __ssh __strip  __tar __unzip __lzma
 " jpackage macros (defined in macros.build)
 syn keyword specMacroNameLocal contained _jnidir _jvmdir _jvmjardir _jvmprivdir _jvmlibdir _jvmdatadir _jvmsysconfdir _jvmcommonlibdir _jvmcommondatadir _jvmcommonsysconfdir
-syn keyword specMacroNameLocal contained java_home jar java javac javadoc 
+syn keyword specMacroNameLocal contained java_home jar java javac javadoc
 
 
 " ------------------------------------------------------------------------------
