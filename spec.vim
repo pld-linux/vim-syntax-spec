@@ -2,9 +2,9 @@
 " Purpose:     Vim syntax file
 " Language:    SPEC: Build/install scripts for PLD Linux RPM packages
 " Maintainer:  PLD Linux <feedback@pld-linux.org>
-" URL:	       http://www.pld-linux.org/
-" Last Change: $Date$ (UTC)
-" Version:     $Revision$
+" URL:	       http://git.pld-linux.org/packages/vim-syntax-spec/
+" Last Change: 2012-11-08
+" Version:     1.122
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -155,7 +155,7 @@ syn keyword specMacroNameLocal contained java_home jar java javac javadoc
 
 " One line macros - valid in all ScriptAreas
 " tip: remember do include new items on specScriptArea's skip section
-syn region specSectionMacroArea oneline matchgroup=specSectionMacro start='^%\(\(un\)\?define\|dump\|trace\|patch\d*\|setup\|configure2_13\|configure\|GNUconfigure\|find_lang\|makeinstall\|cmake\|scons\|waf\|bcond_with\(out\)\?\|include\)\>' end='$' contains=specCommandOpts,specMacroIdentifier,specSectionMacroBcondArea
+syn region specSectionMacroArea oneline matchgroup=specSectionMacro start='^%\(\(un\)\?\(define\|global\)\|dump\|trace\|patch\d*\|setup\|configure2_13\|configure\|GNUconfigure\|find_lang\|makeinstall\|cmake\|scons\|waf\|bcond_with\(out\)\?\|include\)\>' end='$' contains=specCommandOpts,specMacroIdentifier,specSectionMacroBcondArea
 syn region specSectionMacroBracketArea oneline matchgroup=specSectionMacro start='^%{\(configure2_13\|configure\|GNUconfigure\|find_lang\|makeinstall\|cmake\|scons\|waf\)}' end='$' contains=specCommandOpts,specMacroIdentifier
 syn region specSectionMacroBcondArea oneline matchgroup=specBlock start='%{!\??\(with\(out\)\?_[a-zA-Z0-9_]\+\|debug\):' skip='\\}' end='}' contains=ALLBUT,@specLimitedVisibility
 
@@ -210,7 +210,7 @@ syn region specPackageArea matchgroup=specSection start='^%package' end='^%'me=e
 " %% Scripts Section %%
 syn region specScriptArea matchgroup=specSection
 	\ start='^%\(prep\|build\|install\|clean\|pre\|postun\|preun\|post\|triggerprein\|triggerin\|triggerun\|triggerpostun\|pretrans\|posttrans\|verifyscript\|check\)\>'
-	\ skip='^%{\|^%\(define\|patch\d*\|configure2_13\|configure\|ant\|GNUconfigure\|setup\|find_lang\|makeinstall\|cmake\|scons\|waf\|useradd\|groupadd\|addusertogroup\|banner\|service\|env_update\|py_o\?comp\|py_postclean\|py_lint\|\(openldap_schema\|webapp\)_\(un\)\?register\|depmod\|pear_package_\(setup\|install\)\|\(build\|install\)_kernel_modules\|php_webserver_restart\|php4_webserver_restart\|update_browser_plugins\|gconf_schema_\(un\)?install\|glib_compile_schemas\|scrollkeeper_update_post\(un\)?\|update_icon_cache\|update_mime_database\|undos\|nagios_nrpe\|cacti_import_template\)\>'
+	\ skip='^%{\|^%\(\(un\)\?\(define\|global\)\|patch\d*\|configure2_13\|configure\|ant\|GNUconfigure\|setup\|find_lang\|makeinstall\|cmake\|scons\|waf\|useradd\|groupadd\|addusertogroup\|banner\|service\|env_update\|py_o\?comp\|py_postclean\|py_lint\|\(openldap_schema\|webapp\)_\(un\)\?register\|depmod\|pear_package_\(setup\|install\)\|\(build\|install\)_kernel_modules\|php_webserver_restart\|php4_webserver_restart\|update_browser_plugins\|gconf_schema_\(un\)?install\|glib_compile_schemas\|scrollkeeper_update_post\(un\)?\|update_icon_cache\|update_mime_database\|undos\|nagios_nrpe\|cacti_import_template\)\>'
 	\ end='^%'me=e-1
 	\ contains=specSpecialVariables,specVariables,@specCommands,specVariables,shDo,shFor,shCaseEsac,specNoNumberHilite,specCommandOpts,shComment,shIf,specSpecialChar,specMacroIdentifier,specSectionMacroArea,specSectionMacroBracketArea,shOperator,shQuote1,shQuote2,specSectionMacroBcondArea
 " XXX don't forget to update specMacro when updating specScriptArea skip definition

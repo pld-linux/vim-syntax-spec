@@ -1,7 +1,7 @@
 Summary:	Vim syntax: RPM specfiles
 Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
-Version:	1.121
+Version:	1.122
 Release:	1
 License:	Charityware
 Group:		Applications/Editors/Vim
@@ -28,7 +28,7 @@ Ta wtyczka zapewnia podświetlanie składni plików RPM spec.
 
 %prep
 %setup -qcT
-rev=$(awk '/^".*Version:.*Revision:/{print $4}' %{SOURCE0})
+rev=$(awk '/^".*Version:.*/{print $3}' %{SOURCE0})
 if [ "$rev" != "%{version}" ]; then
 	: Update version $rev, and retry
 	exit 1
