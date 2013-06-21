@@ -3,8 +3,8 @@
 " Language:    SPEC: Build/install scripts for PLD Linux RPM packages
 " Maintainer:  PLD Linux <feedback@pld-linux.org>
 " URL:	       http://git.pld-linux.org/packages/vim-syntax-spec/
-" Last Change: 2012-11-08
-" Version:     1.122
+" Last Change: 2013-06-21
+" Version:     1.123
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -118,6 +118,7 @@ syn keyword specMacroNameOther contained perl_vendorarch perl_vendorlib php_pear
 syn keyword specMacroNameOther contained required_jdk requires_php_extension requires_php_pdo_module
 syn keyword specMacroNameOther contained requires_zend_extension ruby_mod_ver_requires_eq ruby_ver_requires_eq rpmcflags rpmcppflags rpmcxxflags rpmldflags tmpdir
 syn keyword specMacroNameOther contained ruby_archdir ruby_rubylibdir ruby_vendorarchdir ruby_vendorlibdir ruby_ridir ruby_sitearchdir ruby_sitelibdir ruby_version ruby_rdocdir
+syn keyword specMacroNameOther contained ruby_specdir ruby_gemdir
 syn keyword specMacroNameOther contained apache_modules_api php_sysconfdir php_includedir php_extensiondir _browserpluginsdir _browserpluginsconfdir
 syn keyword specMacroNameOther contained releq_kernel releq_kernel_up releq_kernel_smp requires_releq_kernel requires_releq_kernel_up requires_releq_kernel_smp
 syn keyword specMacroNameOther contained pyrequires_eq
