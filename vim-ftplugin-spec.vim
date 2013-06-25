@@ -1,7 +1,7 @@
 " Vim filetype plugin file
 " Language: RPM spec file
-" Author:   Elan Ruusam‰e <glen@pld-linux.org>, Zsolt Udvari <uzsolt@pld-linux.org>
-" Copyright:    Copyright (c) 2005-2010 PLD Linux
+" Author:   Elan Ruusam√§e <glen@pld-linux.org>, Zsolt Udvari <uzsolt@pld-linux.org>
+" Copyright:    Copyright (c) 2005-2013 PLD Linux
 " Licence:  You may redistribute this under the same terms as Vim itself
 "
 " This sets up filetype specific options for RPM spec files.
@@ -11,7 +11,6 @@
 map <F5> :!builder -5 %<CR>
 map <F6> :!adapter %<CR>
 map <F8> :!rpmbuild -bb %<CR>
-map <F9> :!. /etc/shrc.d/rpm-build.sh; cvs diff -u % \| diffcol \| less -nR<CR>
 map <F10> :!builder -bb -R -u %<CR>
 
 " which langs do you use, you can modify
@@ -105,4 +104,3 @@ nmap <buffer>\jp :call SearchSubpackage()<CR>
 
 " PLD specfiles are in UTF-8 encoding
 setlocal fileencodings=ucs-bom,utf-8,default,latin2
-
