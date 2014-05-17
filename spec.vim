@@ -1,10 +1,9 @@
 " Filename:    spec.vim
 " Purpose:     Vim syntax file
-" Language:    SPEC: Build/install scripts for PLD Linux RPM packages
+" Language:    RPM SPEC: Build/install scripts for PLD Linux RPM packages
 " Maintainer:  PLD Linux <feedback@pld-linux.org>
 " URL:	       http://git.pld-linux.org/packages/vim-syntax-spec/
-" Last Change: 2013-06-21
-" Version:     1.123
+" Version:     1.124
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -122,7 +121,8 @@ syn keyword specMacroNameOther contained ruby_specdir ruby_gemdir
 syn keyword specMacroNameOther contained apache_modules_api php_sysconfdir php_includedir php_extensiondir _browserpluginsdir _browserpluginsconfdir
 syn keyword specMacroNameOther contained releq_kernel releq_kernel_up releq_kernel_smp requires_releq_kernel requires_releq_kernel_up requires_releq_kernel_smp
 syn keyword specMacroNameOther contained pyrequires_eq
-syn keyword specMacroNameOther contained nodejs_libdir systemdtmpfilesdir
+syn keyword specMacroNameOther contained nodejs_libdir
+syn keyword specMacroNameOther contained systemdtmpfilesdir systemdunitdir systemduserunitdir
 
 syn match   specMacroNameOther contained '\<\(PATCH\|SOURCE\)\d*\>'
 

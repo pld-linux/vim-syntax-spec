@@ -1,13 +1,12 @@
 Summary:	Vim syntax: RPM specfiles
 Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
-Version:	1.123
+Version:	1.124
 Release:	1
 License:	Charityware
 Group:		Applications/Editors/Vim
 Source0:	spec.vim
 Source1:	vim-ftplugin-spec.vim
-# 4.4.35 is broken
 Conflicts:	rpm-build-tools < 4.4.36-2
 # for diffcol
 Suggests:	rpmbuild(macros)
