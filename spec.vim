@@ -3,7 +3,7 @@
 " Language:    RPM SPEC: Build/install scripts for PLD Linux RPM packages
 " Maintainer:  PLD Linux <feedback@pld-linux.org>
 " URL:	       http://git.pld-linux.org/packages/vim-syntax-spec/
-" Version:     1.124
+" Version:     1.125
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -113,7 +113,9 @@ syn keyword specMacroNameOther contained ix86 x8664 ppc arm
 syn keyword specMacroNameOther contained bootstrap_release buildrequires_jdk buildroot buildsubdir distribution disturl name nil optflags perl_sitearch release requires_eq vendor version
 syn keyword specMacroNameOther contained __kernel_ver date debugcflags debuginfocflags epoch kgcc kgcc_package packager
 syn keyword specMacroNameOther contained pear_package_install pear_package_setup perl_archlib perl_privlib perl_sitelib
-syn keyword specMacroNameOther contained perl_vendorarch perl_vendorlib php_pear_dir php_data_dir py_sitedir py_scriptdir py_sitescriptdir
+syn keyword specMacroNameOther contained perl_vendorarch perl_vendorlib php_pear_dir php_data_dir
+syn keyword specMacroNameOther contained py_sitedir py_scriptdir py_sitescriptdir
+syn keyword specMacroNameOther contained py3_sitedir py3_scriptdir py3_sitescriptdir
 syn keyword specMacroNameOther contained required_jdk requires_php_extension requires_php_pdo_module
 syn keyword specMacroNameOther contained requires_zend_extension ruby_mod_ver_requires_eq ruby_ver_requires_eq rpmcflags rpmcppflags rpmcxxflags rpmldflags tmpdir
 syn keyword specMacroNameOther contained ruby_archdir ruby_rubylibdir ruby_vendorarchdir ruby_vendorlibdir ruby_ridir ruby_sitearchdir ruby_sitelibdir ruby_version ruby_rdocdir
