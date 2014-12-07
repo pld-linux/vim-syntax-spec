@@ -3,7 +3,7 @@
 " Language:    RPM SPEC: Build/install scripts for PLD Linux RPM packages
 " Maintainer:  PLD Linux <feedback@pld-linux.org>
 " URL:	       http://git.pld-linux.org/packages/vim-syntax-spec/
-" Version:     1.125
+" Version:     1.126
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -146,7 +146,7 @@ syn keyword specMacroNameLocal contained __cxx __cc __ar __libtoolize __autopoin
 syn keyword specMacroNameLocal contained __gettextize __glib_gettextize __gtkdocize __intltoolize
 syn keyword specMacroNameLocal contained __bzip2 __cat __chgrp __chmod __chown __cp   __cpio __file __gpg __grep __gzip
 syn keyword specMacroNameLocal contained __id  __install __ld   __make   __mkdir __mkdir_p __mv __nm  __objcopy __objdump
-syn keyword specMacroNameLocal contained __patch __perl __pgp __python __rm __rsh  __sed __ssh __strip  __tar __unzip __lzma
+syn keyword specMacroNameLocal contained __patch __perl __pgp __python __python3 __rm __rsh  __sed __ssh __strip  __tar __unzip __lzma
 " jpackage macros (defined in macros.build)
 syn keyword specMacroNameLocal contained _jnidir _jvmdir _jvmjardir _jvmprivdir _jvmlibdir _jvmdatadir _jvmsysconfdir _jvmcommonlibdir _jvmcommondatadir _jvmcommonsysconfdir
 syn keyword specMacroNameLocal contained java_home jar java javac javadoc
