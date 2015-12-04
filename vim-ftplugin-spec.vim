@@ -1,7 +1,7 @@
 " Vim filetype plugin file
 " Language: RPM spec file
 " Author:   Elan Ruusamäe <glen@pld-linux.org>, Zsolt Udvari <uzsolt@pld-linux.org>
-" Copyright:    Copyright (c) 2005-2013 PLD Linux
+" Copyright:    Copyright (c) 2005-2015 PLD Linux
 " Licence:  You may redistribute this under the same terms as Vim itself
 "
 " This sets up filetype specific options for RPM spec files.
@@ -84,8 +84,8 @@ function! SearchSubpackage()
 	call search("%package .*" . searched)
 endfunction
 
-nmap <buffer>\r :call execute "normal ORequires:\t"
-nmap <buffer>\br :call execute "normal OBuildRequires:\t"
+nmap <buffer>\ar :call execute "normal ORequires:\t"
+nmap <buffer>\abr :call execute "normal OBuildRequires:\t"
 nmap <buffer>\se :call Summary("")<CR>
 nmap <buffer>\sh :call Summary("hu")<CR>
 nmap <buffer>\sp :call Summary("pl")<CR>
@@ -100,7 +100,22 @@ nmap <buffer>\pn :call CreateSubpackage(1)<CR>
 " Jumpings
 nmap <buffer>\jc /%changelog<CR>
 nmap <buffer>\jv /^Version:<CR>9l
+nmap <buffer> <LocalLeader>v /^Version:<CR>9l
+nmap <buffer> <LocalLeader>r /^Release:<CR>9l
 nmap <buffer>\jp :call SearchSubpackage()<CR>
+
+
+" The following lines, along with the macros/matchit.vim plugin,
+" make it easy to navigate the different sections of a spec file
+" with the % key (thanks to Max Ischenko).
+
+let b:match_ignorecase = 0
+let b:match_words =
+  \ '^Name:^%description:^%clean:^%setup:^%build:^%install:^%files:' .
+  \ '^%package:^%preun:^%postun:^%changelog'
+
+" add tab key match them
+nnoremap <silent> <tab>  %
 
 " PLD specfiles are in UTF-8 encoding
 setlocal fileencodings=ucs-bom,utf-8,default,latin2

@@ -32,10 +32,11 @@ syn match specVariables   contained '\${\w*[#%][^}]*}' contains=specSubstChar
 syn match specMacroIdentifier contained '%\h\w*' contains=specMacroNameLocal,specMacroNameOther,specPercent,specSpecialChar
 syn region specMacroIdentifier oneline matchgroup=Special start='%{' skip='\\}' end='}' contains=specConfOpts,specMacroNameLocal,specMacroNameOther,specPercent,specSpecialChar
 syn match specBcond contained '%{with\(out\)\?\s\+[a-zA-Z0-9_-]\+}'
+syn match specBcond contained '%{defined\s\+[a-zA-Z0-9_-]\+}'
 
 syn match specConfOpts contained '{\@<=__with\(_without\)\?' nextgroup=specConfOptsBcond
 syn match specConfOpts contained '{\@<=__without' nextgroup=specConfOptsBcond
-syn match specConfOpts contained '{\@<=__enable\(_disable\)\?' nextgroup=specConfOptsBcond
+syn match specConfOpts contained '{\@<=__enable\(_disable\)\?\(_not\)\?' nextgroup=specConfOptsBcond
 syn match specConfOpts contained '{\@<=__disable' nextgroup=specConfOptsBcond
 syn match specConfOptsBcond contained '\s\+[a-zA-Z0-9_]\+' nextgroup=specConfOptsName
 syn match specConfOptsName contained '\s\+[a-zA-Z0-9_-]\+'

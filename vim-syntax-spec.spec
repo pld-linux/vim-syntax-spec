@@ -8,6 +8,8 @@ Group:		Applications/Editors/Vim
 Source0:	spec.vim
 Source1:	vim-ftplugin-spec.vim
 Conflicts:	rpm-build-tools < 4.4.36-2
+# for extended % matching
+Suggests:	vim-plugin-matchit
 # for diffcol
 Suggests:	rpmbuild(macros)
 Conflicts:	rpmbuild(macros) < 1.665
