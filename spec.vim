@@ -3,7 +3,6 @@
 " Language:    RPM SPEC: Build/install scripts for PLD Linux RPM packages
 " Maintainer:  PLD Linux <feedback@pld-linux.org>
 " URL:	       http://git.pld-linux.org/packages/vim-syntax-spec/
-" Version:     1.128
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded

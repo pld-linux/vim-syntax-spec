@@ -29,11 +29,6 @@ Ta wtyczka zapewnia podświetlanie składni plików RPM spec.
 
 %prep
 %setup -qcT
-rev=$(awk '/^".*Version:.*/{print $3}' %{SOURCE0})
-if [ "$rev" != "%{version}" ]; then
-	: Update version $rev, and retry
-	exit 1
-fi
 
 %install
 rm -rf $RPM_BUILD_ROOT
