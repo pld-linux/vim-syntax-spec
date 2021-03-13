@@ -194,7 +194,7 @@ syn match specDescriptionLimit contained '\%>70v.\+'
 " PreReq and BuildPreReq deprecated by Requires ans BuildRequires
 syn region specPreAmbleDeprecated oneline matchgroup=specError start='^\(Copyright\|Serial\|PreReq\|BuildPreReq\(uires\)\?\)' end='$' contains=specEmail,specURL,specURLMacro,specLicense,specColon,specVariables,specSpecialChar,specMacroIdentifier
 syn region specPreAmble oneline matchgroup=specPreambleField
-	\ start='\(^\|\(^%{!\??\(with\(out\)\?_[a-zA-Z0-9_]\+\|debug\):\)\@<=\)\(Name\|Version\|Packager\|Requires\|Suggests\|Icon\|URL\|Source\d*\|Patch\d*\|Prefix\|Packager\|Group\|License\|Release\|BuildRoot\|Distribution\|Vendor\|Provides\|ExclusiveArch\|ExcludeArch\|ExclusiveOS\|Obsoletes\|BuildArch\|BuildArchitectures\|BuildRequires\|BuildConflicts\|Conflicts\|AutoRequires\|AutoReqProv\|AutoReq\|AutoProv\|Epoch\|NoSource\)'
+	\ start='\(^\|\(^%{!\??\(with\(out\)\?_[a-zA-Z0-9_]\+\|debug\):\)\@<=\)\(Name\|Version\|Packager\|Requires\|Suggests\|Enhances:\|Recommends\|Supplements\|Icon\|URL\|Source\d*\|Patch\d*\|Prefix\|Packager\|Group\|License\|Release\|BuildRoot\|Distribution\|Vendor\|Provides\|ExclusiveArch\|ExcludeArch\|ExclusiveOS\|Obsoletes\|BuildArch\|BuildArchitectures\|BuildRequires\|BuildConflicts\|Conflicts\|AutoRequires\|AutoReqProv\|AutoReq\|AutoProv\|Epoch\|NoSource\)'
 	\ end='$\|}\@='
 	\ contains=specEmail,specURL,specURLMacro,specLicense,specLicenseWarning,specColon,specVariables,specSpecialChar,specMacroIdentifier,specSectionMacroBcondArea
 
