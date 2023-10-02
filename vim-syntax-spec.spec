@@ -1,7 +1,7 @@
 Summary:	Vim syntax: RPM specfiles
 Summary(pl.UTF-8):	Składania dla Vima: pliki RPM spec
 Name:		vim-syntax-spec
-Version:	1.129
+Version:	1.130
 Release:	1
 License:	Charityware
 Group:		Applications/Editors/Vim
@@ -15,7 +15,7 @@ Suggests:	rpmbuild(macros)
 Conflicts:	rpmbuild(macros) < 1.665
 # for _vimdatadir existence
 Requires:	vim-rt >= 4:7.2.170
-Obsoletes:	vim-ftplugin-spec
+Obsoletes:	vim-ftplugin-spec < 0.2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

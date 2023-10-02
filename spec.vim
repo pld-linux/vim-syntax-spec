@@ -133,7 +133,7 @@ syn match   specMacroNameOther contained '\<\(PATCH\|SOURCE\)\d*\>'
 syn keyword specMacroNameLocal contained _aclocaldir _applnkdir _arch _binary_payload _bindir _build _build_arch _build_alias
 syn keyword specMacroNameLocal contained _build_cpu _builddir _build_os _buildshell _buildsubdir _build_vendor _bzip2bin _datadir
 syn keyword specMacroNameLocal contained _dbpath _dbpath_rebuild _defaultdocdir _desktopdir _docdir _examplesdir _excludedocs _kdedocdir
-syn keyword specMacroNameLocal contained _exec_prefix _fixgroup _fixowner _fixperms _fontsdir _ftpport _ftpproxy _gnu _gpg_name
+syn keyword specMacroNameLocal contained _exec_prefix _fixgroup _fixowner _fixperms _fontsdir _ftpport _ftpproxy _gidocdir _gnu _gpg_name
 syn keyword specMacroNameLocal contained _gpg_path _gtkdocdir _gzipbin _host _host_alias _host_cpu _host_os _host_vendor
 syn keyword specMacroNameLocal contained _httpport _httpproxy _iconsdir _includedir _infodir _initrddir _install_langs
 syn keyword specMacroNameLocal contained _install_script_path _instchangelog _javaclasspath _javadir _javadocdir _javasrcdir _kernelsrcdir
