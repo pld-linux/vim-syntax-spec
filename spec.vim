@@ -90,6 +90,7 @@ syn match   specMacro contained '%\(\(openldap_schema\|webapp\)_\(un\)\?register
 syn match   specMacro contained '%\(pear_package_\(setup\|install\)\)'
 syn match   specMacro contained '%\(py_o\?comp\|py_postclean\|py_lint\)'
 syn match   specMacro contained '%\(py3\?_build\|py3\?_install\)'
+syn match   specMacro contained '%\(py3_build_pyproject\|py3_install_pyproject\)'
 syn match   specMacro contained '%\(build\|install\)_kernel_modules'
 syn match   specMacro contained '%ant'
 syn match   specMacro contained '%\(php\|php4\)_webserver_restart'
@@ -214,7 +215,7 @@ syn region specPackageArea matchgroup=specSection start='^%package' end='^%'me=e
 " %% Scripts Section %%
 syn region specScriptArea matchgroup=specSection
 	\ start='^%\(prep\|build\|install\|clean\|pre\|postun\|preun\|post\|triggerprein\|triggerin\|triggerun\|triggerpostun\|pretrans\|posttrans\|verifyscript\|check\)\>'
-	\ skip='^%{\|^%\(\(un\)\?\(define\|global\)\|patch\d*\|configure2_13\|configure\|ant\|GNUconfigure\|setup\|find_lang\|makeinstall\|cmake\|scons\|waf\|useradd\|groupadd\|addusertogroup\|banner\|service\|env_update\|py_o\?comp\|py_postclean\|py_lint\|py3\?_build\|py3\?_install\|\(openldap_schema\|webapp\)_\(un\)\?register\|depmod\|pear_package_\(setup\|install\)\|\(build\|install\)_kernel_modules\|php_webserver_restart\|php4_webserver_restart\|update_browser_plugins\|gconf_schema_\(un\)?install\|glib_compile_schemas\|scrollkeeper_update_post\(un\)?\|update_icon_cache\|update_mime_database\|undos\|nagios_nrpe\|cacti_import_template\)\>'
+	\ skip='^%{\|^%\(\(un\)\?\(define\|global\)\|patch\d*\|configure2_13\|configure\|ant\|GNUconfigure\|setup\|find_lang\|makeinstall\|cmake\|scons\|waf\|useradd\|groupadd\|addusertogroup\|banner\|service\|env_update\|py_o\?comp\|py_postclean\|py_lint\|py3\?_build\|py3\?_install\|py3_build_pyproject\|py3_install_pyproject\|\(openldap_schema\|webapp\)_\(un\)\?register\|depmod\|pear_package_\(setup\|install\)\|\(build\|install\)_kernel_modules\|php_webserver_restart\|php4_webserver_restart\|update_browser_plugins\|gconf_schema_\(un\)?install\|glib_compile_schemas\|scrollkeeper_update_post\(un\)?\|update_icon_cache\|update_mime_database\|undos\|nagios_nrpe\|cacti_import_template\)\>'
 	\ end='^%'me=e-1
 	\ contains=specSpecialVariables,specVariables,@specCommands,specVariables,shDo,shFor,shCaseEsac,specNoNumberHilite,specCommandOpts,shComment,shIf,specSpecialChar,specMacroIdentifier,specSectionMacroArea,specSectionMacroBracketArea,shOperator,shQuote1,shQuote2,specSectionMacroBcondArea
 " XXX don't forget to update specMacro when updating specScriptArea skip definition
